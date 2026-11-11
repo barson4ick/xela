@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Сантиметры — твой район</title>
+<meta name="theme-color" content="#f3f0e9">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header id="top">
+  <button id="chatBtn" class="chat-pill" aria-label="Выбрать чат">
+    <span class="chat-ava" id="chatAva">🏙</span>
+    <span class="chat-txt">
+      <b id="chatTitle">Загрузка…</b>
+      <span id="chatSub">Открываем район</span>
+    </span>
+    <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg>
+  </button>
+  <button id="balanceBtn" class="balance-chip" aria-label="Открыть профиль">
+    <b id="sizeChip">—</b><span>см</span>
+  </button>
+</header>
+
+<main id="view" aria-live="polite"></main>
+
+<nav id="tabs" aria-label="Разделы">
+  <button data-tab="home" class="on" aria-label="Главная">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.6 12 3.4l8.5 7.2V20a1 1 0 0 1-1 1h-4.6v-6.2H9.1V21H4.5a1 1 0 0 1-1-1z"/></svg>
+    <span>Главная</span>
+  </button>
+  <button data-tab="games" aria-label="Игры">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 7.8h9.6a4 4 0 0 1 3.9 3.1l.8 3.6a2.4 2.4 0 0 1-4.2 2.1L15.4 15H8.6l-1.9 1.6a2.4 2.4 0 0 1-4.2-2.1l.8-3.6a4 4 0 0 1 3.9-3.1z"/><path d="M8 10.2v3.2M6.4 11.8h3.2M15.8 10.8h.01M17.6 12.6h.01"/></svg>
+    <span>Игры</span>
+  </button>
+  <button data-tab="rp" aria-label="Район">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8.2l5.5-2.7V21M8.5 21V10l6-2.8V21M14.5 21V8.8L21 12v9M3 21h18"/><path d="M5.5 10.5h.01M5.5 13.5h.01M5.5 16.5h.01M11 12.5h.01M11 15.5h.01M17 14h.01M17 17h.01"/></svg>
+    <span>Район</span>
+  </button>
+</nav>
+
+<div id="modal" class="modal hidden" aria-hidden="true">
+  <div class="sheet">
+    <div class="grab"></div>
+    <button class="close" id="modalClose" aria-label="Закрыть">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<div id="toast" class="toast hidden" role="status"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
